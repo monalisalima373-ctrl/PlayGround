@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#10121b" />
+  <title>Neon Clash — Rooftop Rumble</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Neon Clash home"><span class="brand-mark">N</span><span>NEON<span class="brand-light">CLASH</span></span></a>
+      <div class="top-note"><span class="live-dot"></span> ROOFTOP RUMBLE <span class="note-divider">/</span> NIGHT CITY</div>
+      <button class="sound-button" id="soundToggle" aria-label="Toggle sound"><span class="sound-icon">♪</span><span class="sound-label">SOUND ON</span></button>
+    </header>
+
+    <section class="arena-wrap" aria-label="Fighting game arena">
+      <div class="arena-frame">
+        <canvas id="game" width="960" height="540" aria-label="Neon Clash fighting game"></canvas>
+        <div class="hud">
+          <div class="fighter-card left-card">
+            <div class="fighter-name-row"><span class="fighter-name">KAI</span><span class="fighter-title">THE COMET</span></div>
+            <div class="health-track"><div class="health-fill player-health" id="playerHealth"></div><span class="health-shine"></span></div>
+            <div class="meter-track"><div class="meter-fill" id="playerMeter"></div></div>
+          </div>
+          <div class="round-info"><div class="round-label">ROUND <span>01</span></div><div class="timer" id="timer">60</div><div class="round-status" id="roundStatus">FIGHT!</div></div>
+          <div class="fighter-card right-card">
+            <div class="fighter-name-row"><span class="fighter-title">THE IRON WALL</span><span class="fighter-name">BRICK</span></div>
+            <div class="health-track"><div class="health-fill enemy-health" id="enemyHealth"></div><span class="health-shine"></span></div>
+            <div class="meter-track enemy-meter"><div class="meter-fill" id="enemyMeter"></div></div>
+          </div>
+        </div>
+        <div class="center-message" id="centerMessage">
+          <div class="message-kicker">ONE NIGHT. ONE ROOFTOP.</div>
+          <h1>NEON<br><em>CLASH</em></h1>
+          <p>Two fighters. No way out. Make your move.</p>
+          <button class="start-button" id="startButton"><span>ENTER THE FIGHT</span><b>→</b></button>
+          <div class="start-hint">PRESS <kbd>ENTER</kbd> OR TAP TO BEGIN</div>
+        </div>
+        <div class="hit-flash" id="hitFlash"></div>
+        <div class="arena-caption"><span>01</span> / THE ROOFTOP <span class="caption-right">NIGHT SHIFT · 199X</span></div>
+      </div>
+    </section>
+
+    <section class="controls-bar" aria-label="Game controls">
+      <div class="control-group movement-controls"><span class="control-label">MOVE</span><div class="key-set"><kbd>A</kbd><kbd>D</kbd></div><span class="control-description">WALK</span><kbd class="jump-key">W</kbd><span class="control-description">JUMP</span></div>
+      <div class="control-divider"></div>
+      <div class="control-group attack-controls"><span class="control-label">ATTACK</span><kbd class="attack-key">J</kbd><span class="control-description">PUNCH</span><kbd class="attack-key">K</kbd><span class="control-description">KICK</span></div>
+      <div class="control-divider"></div>
+      <div class="control-group specials-controls"><span class="control-label">SPECIALS</span><kbd class="special-key">Q</kbd><span class="control-description">COMET</span><kbd class="special-key">E</kbd><span class="control-description">RISING SUN</span><kbd class="special-key">R</kbd><span class="control-description">BLINK</span></div>
+      <button class="restart-button" id="restartButton" title="Restart fight"><span>↻</span> RESET</button>
+    </section>
+
+    <section class="mobile-controls" aria-label="Touch controls">
+      <div class="touch-pad"><button data-key="a" aria-label="Move left">←</button><button data-key="w" aria-label="Jump">↑</button><button data-key="d" aria-label="Move right">→</button></div>
+      <div class="touch-actions"><button class="touch-punch" data-key="j">PUNCH</button><button class="touch-kick" data-key="k">KICK</button><button class="touch-special" data-key="q">Q<span>COMET</span></button><button class="touch-special" data-key="e">E<span>RISE</span></button><button class="touch-special" data-key="r">R<span>BLINK</span></button></div>
+    </section>
+    <footer><span>© 199X NEON CITY FIGHT CLUB</span><span>BUILT FOR THE BOLD <b>✳</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
